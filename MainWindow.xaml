@@ -68,10 +68,13 @@
                                 Orientation="Horizontal">
                         <TextBlock Margin="8,0"
                                    VerticalAlignment="Center"
-                                   Text="Light Used?:"/>
+                                   Text="Dark?:"/>
                         <CheckBox Margin="8,0"
                                   VerticalAlignment="Center"
                                   IsChecked="{Binding saveFile.world.dark}"/>
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="(For &quot;My Old Friend&quot;. Changes to false when a light source is used.)"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
