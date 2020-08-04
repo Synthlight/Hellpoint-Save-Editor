@@ -1,0 +1,311 @@
+﻿<Window x:Class="Save_Editor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Save_Editor"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:Save_Editor.Models"
+        Name="this"
+        Title="Hellpoint Save Editor"
+        Width="1300"
+        Height="600"
+        DataContext="{x:Reference this}"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d">
+    <Grid>
+        <TabControl>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="World"/>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Breach:"/>
+                        <ComboBox Margin="8,0"
+                                  VerticalAlignment="Center"
+                                  DisplayMemberPath="Value"
+                                  ItemsSource="{x:Static models:Item.BREACHES}"
+                                  SelectedValue="{Binding saveFile.world.breach}"
+                                  SelectedValuePath="Key"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="NG Level:"/>
+                        <TextBox MinWidth="50"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.world.level}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Difficulty:"/>
+                        <TextBox MinWidth="50"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.world.hard}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Light Used?:"/>
+                        <CheckBox Margin="8,0"
+                                  VerticalAlignment="Center"
+                                  IsChecked="{Binding saveFile.world.dark}"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="sStates"/>
+                </TabItem.Header>
+                <DataGrid AutoGenerateColumns="True"
+                          ItemsSource="{Binding saveFile.world.sStates}"
+                          SelectionMode="Single"/>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Player"/>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Healing Level:"/>
+                        <TextBox MinWidth="50"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.player.healingLevel}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Axions:"/>
+                        <TextBox MinWidth="100"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.player.currency}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Current Health:"/>
+                        <TextBox MinWidth="50"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.player.health}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Current Energy:"/>
+                        <TextBox MinWidth="50"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.player.energy}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Stored Healing Uses:"/>
+                        <TextBox MinWidth="50"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.player.healing}"/>
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="(Every 100 is a single use.)"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="5"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Covenant:"/>
+                        <ComboBox Margin="8,0"
+                                  VerticalAlignment="Center"
+                                  DisplayMemberPath="Value"
+                                  ItemsSource="{x:Static models:Item.COVENANTS}"
+                                  SelectedValue="{Binding saveFile.player.covenant}"
+                                  SelectedValuePath="Key"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="6"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Stat 1:"/>
+                        <TextBox MinWidth="50"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.player.stats[0]}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="7"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Stat 2:"/>
+                        <TextBox MinWidth="50"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.player.stats[1]}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="8"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Stat 3:"/>
+                        <TextBox MinWidth="50"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.player.stats[2]}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="9"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Stat 4:"/>
+                        <TextBox MinWidth="50"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.player.stats[3]}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="10"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Stat 5:"/>
+                        <TextBox MinWidth="50"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.player.stats[4]}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="11"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Stat 6:"/>
+                        <TextBox MinWidth="50"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.player.stats[5]}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="12"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Stat 7:"/>
+                        <TextBox MinWidth="50"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.player.stats[6]}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="13"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Stat 8:"/>
+                        <TextBox MinWidth="50"
+                                 Margin="8,0"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding saveFile.player.stats[7]}"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Inventory"/>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0"
+                                Margin="0,8,0,0"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Item to Add:"/>
+                        <ComboBox Name="cb_item_to_add"
+                                  Margin="8,0"
+                                  VerticalAlignment="Center"
+                                  DisplayMemberPath="Value"
+                                  ItemsSource="{x:Static models:Item.ALL_ITEMS_SORTED}"
+                                  SelectedValuePath="Key"/>
+                        <Button Margin="8,0"
+                                VerticalAlignment="Center"
+                                Click="AddItem_OnClick"
+                                Content="Add Item"/>
+                    </StackPanel>
+                    <DataGrid Grid.Row="1"
+                              Margin="0,8,0,0"
+                              AutoGenerateColumns="True"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="True"
+                              ItemsSource="{Binding saveFile.player.items}"
+                              SelectionMode="Single"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
