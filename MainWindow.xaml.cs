@@ -2,9 +2,9 @@
 using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using Microsoft.Win32;
@@ -20,7 +20,10 @@ namespace Save_Editor {
         public string   targetFile;
 
         public MainWindow() {
-            LoadFile();
+            if (!LoadFile()) {
+                Application.Current.Shutdown();
+                return;
+            }
 
             if (!Data.BREACHES.ContainsKey(saveFile.world.breach)) {
                 Data.BREACHES.Add(saveFile.world.breach, $"Unknown ({saveFile.world.breach})");
@@ -49,17 +52,17 @@ namespace Save_Editor {
 
         private void ExtractData() {
             try {
-                var toWrite = $"Breach: {Item.GetNameOrId(saveFile.world.breach)},\r\n";
+                var toWrite = $"Breach: {Data.GetNameOrId(saveFile.world.breach)},\r\n";
 
-                var index = 0;
+                var index = -1;
                 foreach (var slot in saveFile.player.slots) {
+                    index++;
                     if (!slot.used) continue;
                     toWrite += $"Slot {(Slot.Index) index}:\r\n";
                     foreach (var item in slot.items) {
                         if (item == -1) continue;
-                        toWrite += $"    {saveFile.player.items[item].GetNameOrId()},\r\n";
+                        toWrite += $"    {saveFile.player.items[item].nameOrId},\r\n";
                     }
-                    index++;
                 }
 
                 toWrite += JsonConvert.SerializeObject(saveFile.world.sStates, Formatting.Indented) + "\r\n";
@@ -81,16 +84,12 @@ namespace Save_Editor {
             }
         }
 
-        private bool IsItemInList(Guid itemId) {
-            return saveFile.player.items.Any(item => item.id == itemId);
-        }
-
         [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
-        private void LoadFile() {
+        private bool LoadFile() {
             var target = GetOpenTarget();
             if (string.IsNullOrEmpty(target)) {
                 Application.Current.Shutdown();
-                return;
+                return false;
             }
 
             targetFile = target;
@@ -100,6 +99,7 @@ namespace Save_Editor {
             ReIndexItems();
 
             saveFile.player.items.CollectionChanged += Items_CollectionChanged;
+            return true;
         }
 
         [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
@@ -168,6 +168,15 @@ namespace Save_Editor {
                 saveFile.player.items[i].index = i;
             }
             CollectionViewSource.GetDefaultView(saveFile.player.items).Refresh();
+        }
+
+        private void DgItems_OnAutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e) {
+            switch (e.PropertyName) {
+                case nameof(Item.nameOverride):
+                case nameof(Item.nameOrId):
+                    e.Cancel = true;
+                    break;
+            }
         }
     }
 }

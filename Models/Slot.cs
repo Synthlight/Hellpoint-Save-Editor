@@ -9,7 +9,7 @@ namespace Save_Editor.Models {
     [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
     [SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Global")]
     public class Slot {
-        public int       index { get; set; }
+        public Index     index { get; set; }
         public bool      used  { get; set; }
         public List<int> items { get; set; }
 
@@ -25,14 +25,14 @@ namespace Save_Editor.Models {
         public enum Index {
             Off_Hand       = 0,
             Main_Hand      = 1,
-            Helm           = 2,
+            Head           = 2,
             Chest          = 3,
             Arms           = 4,
             Legs           = 5,
-            Healing_Method = 7,
-            Body_Module    = 8,
-            Mind_Module    = 9,
-            Omnicube       = 10,
+            Healing_Method = 9,
+            Body_Module    = 10,
+            Mind_Module    = 11,
+            Omnicube       = 12,
         }
     }
 }

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Save_Editor {
     public static class Data {
-        public static readonly Dictionary<Guid, string> ALL_IDS;
-        public static readonly Dictionary<Guid, string> ALL_ITEMS;
+        public static readonly Dictionary<Guid, string> ALL_IDS   = new Dictionary<Guid, string>();
+        public static readonly Dictionary<Guid, string> ALL_ITEMS = new Dictionary<Guid, string>();
         public static readonly Dictionary<Guid, string> ALL_ITEMS_SORTED;
+        public static readonly Dictionary<Guid, string> MAIN_HAND = new Dictionary<Guid, string>();
+        public static readonly Dictionary<Guid, string> OFF_HAND  = new Dictionary<Guid, string>();
 
         public static readonly Dictionary<Guid, string> MISC = new Dictionary<Guid, string> {
             // Particles
@@ -100,23 +101,7 @@ namespace Save_Editor {
             {new Guid("929c36c9-e7b9-46c1-8450-3a6bfe68c638"), "Induction Shield Conductor"},
             // Quest
             {new Guid("4066d4b3-54fe-4d61-9264-2bf40069971c"), "Mass AI Patch Conductor (Don't add. Tied to quest.)"},
-            // Shields
-            {new Guid("5bc3ab7f-e158-474a-a2b8-a2d14ccde10f"), "Victim's Shield"},
-            {new Guid("82fdbcc2-bd0e-46c2-86fa-8844431df19f"), "Heat Shield"},
-            {new Guid("bf60b459-6c71-4554-972c-302a0b135a0c"), "Old Heat Shield"},
-            {new Guid("e785046b-4f1f-47d1-a05c-4a2cf13558ae"), "Scrapped Heat Shield"},
-            {new Guid("2697a4a2-e5f5-4587-9128-c1c4e13e8cbb"), "Scrap Shield"},
-            {new Guid("3ca2102b-3969-4056-95dc-590ff761030e"), "Sohn Bulwark"},
-            {new Guid("6b9b2671-4a3d-4eb7-ae56-e5db925ede5b"), "Sentinel Cross"},
-            {new Guid("e4e4a855-d9f7-4b34-9015-777b29660124"), "Ancient Warrior Shield"},
-            {new Guid("bcb8af0f-5b02-431b-82e5-63d6273c315e"), "Decrepit Warrior Shield"},
-            {new Guid("f442ddc6-a350-4fea-b47e-ae1f1f8759ec"), "Artillery Shield"},
-            {new Guid("0ae41428-623a-4b4b-82a1-6018a2727aab"), "Disciple Shield"},
-            {new Guid("5b90699e-658f-4ec6-b921-ddbf6deca64a"), "Dark Disciple Shield"},
-            {new Guid("701817c9-c11a-46a1-81da-f5b3787157c7"), "Torture Board"},
-            // Armor
             // Omnicube Stuff
-            {new Guid("9c22deff-da77-47dd-8635-17333731134b"), "Omnicube"},
             {new Guid("dc15356a-af89-4ef7-8ec2-17b95cfa5c02"), "Omnicube Defense System"},
             {new Guid("ba749cc5-8b45-4234-a98e-a8bee3958602"), "Omnicube Jukebox (Program A)"},
             {new Guid("c45acf5a-d721-4311-9eb3-65418aaa915f"), "Omnicube Auto-Heal"},
@@ -171,8 +156,7 @@ namespace Save_Editor {
             {new Guid("c011625e-0c3f-485c-8502-cb230bb11d52"), "Arcology Limited Access Passport"}
         };
 
-        public static readonly Dictionary<Guid, string> WEAPONS = new Dictionary<Guid, string> {
-            // Weapons (Melee)
+        public static readonly Dictionary<Guid, string> WEAPONS_MELEE = new Dictionary<Guid, string> {
             {new Guid("88ca6a94-47aa-464e-9ffc-1b13f82e24de"), "Pipe"},
             {new Guid("8e7aa059-e38a-416c-b3c3-2f83811044b5"), "Officer Tule's Glaive"},
             {new Guid("df6eb4a3-95cd-4836-b416-39611c7e2ceb"), "Officer Glaive"},
@@ -200,8 +184,10 @@ namespace Save_Editor {
             {new Guid("2ea0fb7d-f71f-4e58-9084-3917a0f4be39"), "Archon Spear"},
             {new Guid("5a6ad367-fb00-448a-a8a1-79043de5ba2a"), "Prying Tool"},
             {new Guid("ee34e8d4-6fc2-4cbc-8239-4d7e63a12c18"), "Nemundis Oculus"},
-            {new Guid("522976a5-b3e2-4308-825e-1c998ea914bf"), "Uthos Gavel"},
-            // Weapons (Ranged)
+            {new Guid("522976a5-b3e2-4308-825e-1c998ea914bf"), "Uthos Gavel"}
+        };
+
+        public static readonly Dictionary<Guid, string> WEAPONS_RANGED = new Dictionary<Guid, string> {
             {new Guid("7832f8f5-b6bc-4584-87a4-edf7a5650a77"), "Railgun"},
             {new Guid("eb4dc0e9-3c61-44fa-9f2b-e980a2bb1f25"), "Entropic Railgun"},
             {new Guid("289fd48a-911e-44d0-96d0-2847d06da080"), "Artillery OTX"},
@@ -214,6 +200,22 @@ namespace Save_Editor {
             {new Guid("a4494bb0-d499-4182-bf77-00b887ab4174"), "Hedron of Entropy"},
             {new Guid("8a12ec6a-7cd7-4da3-b366-d6b7cec3d409"), "Nihl Prophet Hand"},
             {new Guid("d77c6e26-185a-4510-be18-2f612c6293c2"), "White Prophet Hand"}
+        };
+
+        public static readonly Dictionary<Guid, string> SHIELDS = new Dictionary<Guid, string> {
+            {new Guid("5bc3ab7f-e158-474a-a2b8-a2d14ccde10f"), "Victim's Shield"},
+            {new Guid("82fdbcc2-bd0e-46c2-86fa-8844431df19f"), "Heat Shield"},
+            {new Guid("bf60b459-6c71-4554-972c-302a0b135a0c"), "Old Heat Shield"},
+            {new Guid("e785046b-4f1f-47d1-a05c-4a2cf13558ae"), "Scrapped Heat Shield"},
+            {new Guid("2697a4a2-e5f5-4587-9128-c1c4e13e8cbb"), "Scrap Shield"},
+            {new Guid("3ca2102b-3969-4056-95dc-590ff761030e"), "Sohn Bulwark"},
+            {new Guid("6b9b2671-4a3d-4eb7-ae56-e5db925ede5b"), "Sentinel Cross"},
+            {new Guid("e4e4a855-d9f7-4b34-9015-777b29660124"), "Ancient Warrior Shield"},
+            {new Guid("bcb8af0f-5b02-431b-82e5-63d6273c315e"), "Decrepit Warrior Shield"},
+            {new Guid("f442ddc6-a350-4fea-b47e-ae1f1f8759ec"), "Artillery Shield"},
+            {new Guid("0ae41428-623a-4b4b-82a1-6018a2727aab"), "Disciple Shield"},
+            {new Guid("5b90699e-658f-4ec6-b921-ddbf6deca64a"), "Dark Disciple Shield"},
+            {new Guid("701817c9-c11a-46a1-81da-f5b3787157c7"), "Torture Board"}
         };
 
         public static readonly Dictionary<Guid, string> ARMOR = new Dictionary<Guid, string> {
@@ -369,17 +371,33 @@ namespace Save_Editor {
 
         public static readonly Dictionary<Guid, string> COVENANTS = new Dictionary<Guid, string>();
 
+        public static readonly Dictionary<Guid, string> OMNICUBE = new Dictionary<Guid, string> {
+            {new Guid("9c22deff-da77-47dd-8635-17333731134b"), "Omnicube"}
+        };
+
         static Data() {
-            ALL_IDS   = new Dictionary<Guid, string>();
-            ALL_ITEMS = new Dictionary<Guid, string>();
+            MISC           = MISC.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+            HEALING_METHOD = HEALING_METHOD.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+            KEY_ITEMS      = KEY_ITEMS.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+            WEAPONS_MELEE  = WEAPONS_MELEE.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+            WEAPONS_RANGED = WEAPONS_RANGED.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+            SHIELDS        = SHIELDS.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+            ARMOR          = ARMOR.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+            MODULES_BODY   = MODULES_BODY.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+            MODULES_MIND   = MODULES_MIND.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+            BREACHES       = BREACHES.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+            COVENANTS      = COVENANTS.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
 
             MISC.CopyTo(ALL_IDS);
             HEALING_METHOD.CopyTo(ALL_IDS);
             KEY_ITEMS.CopyTo(ALL_IDS);
-            WEAPONS.CopyTo(ALL_IDS);
+            WEAPONS_MELEE.CopyTo(ALL_IDS);
+            WEAPONS_RANGED.CopyTo(ALL_IDS);
+            SHIELDS.CopyTo(ALL_IDS);
             ARMOR.CopyTo(ALL_IDS);
             MODULES_BODY.CopyTo(ALL_IDS);
             MODULES_MIND.CopyTo(ALL_IDS);
+            OMNICUBE.CopyTo(ALL_IDS);
 
             ALL_IDS.CopyTo(ALL_ITEMS);
 
@@ -387,6 +405,18 @@ namespace Save_Editor {
             COVENANTS.CopyTo(ALL_IDS);
 
             ALL_ITEMS_SORTED = ALL_ITEMS.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+
+            WEAPONS_MELEE.CopyTo(MAIN_HAND);
+            WEAPONS_RANGED.CopyTo(MAIN_HAND);
+
+            WEAPONS_RANGED.CopyTo(OFF_HAND);
+            SHIELDS.CopyTo(OFF_HAND);
+
+            COVENANTS.Add(Guid.Empty, "[None]");
+        }
+
+        public static string GetNameOrId(Guid guid) {
+            return ALL_IDS.ContainsKey(guid) ? ALL_IDS[guid] : guid.ToString();
         }
     }
 }

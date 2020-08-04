@@ -30,20 +30,18 @@ namespace Save_Editor.Models {
         public Guid id { get; set; }
 
         [JsonIgnore]
-        public string name => Data.ALL_IDS.ContainsKey(id) ? Data.ALL_IDS[id] : "";
+        public string nameOverride = "";
+
+        [JsonIgnore]
+        public string name => Data.ALL_ITEMS.ContainsKey(id) ? Data.ALL_ITEMS[id] : nameOverride;
+
+        [JsonIgnore]
+        public string nameOrId => name == "" ? id.ToString() : name;
 
         public uint  count     { get; set; }
         public int   selection { get; set; }
         public int[] values    { get; set; }
         public int[] sockets   { get; set; }
-
-        public string GetNameOrId() {
-            return name == "" ? id.ToString() : name;
-        }
-
-        public static string GetNameOrId(Guid guid) {
-            return Data.ALL_IDS.ContainsKey(guid) ? Data.ALL_IDS[guid] : guid.ToString();
-        }
 
         [JsonExtensionData]
 #pragma warning disable 169
