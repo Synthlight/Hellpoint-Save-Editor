@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -73,14 +74,17 @@ namespace Save_Editor.Models {
         [JsonIgnore]
         public Dictionary<int, Item> omnicubeWithNegativeOne => GetDataOfTypeWithNegativeOne(Data.OMNICUBE);
 
-        private Dictionary<int, Item> GetDataOfTypeWithNegativeOne(Dictionary<Guid, string> dataSource) {
-            var dict = new Dictionary<int, Item> {{-1, new Item(Guid.Empty) {nameOverride = "[None]"}}};
+        private Dictionary<int, Item> GetDataOfTypeWithNegativeOne(IReadOnlyDictionary<Guid, string> dataSource) {
+            var dict     = new Dictionary<int, Item> {{-1, new Item(Guid.Empty) {nameOverride = "[None]"}}};
+            var dictTemp = new Dictionary<int, Item>();
 
             for (var i = 0; i < items.Count; i++) {
                 if (dataSource.ContainsKey(items[i].id)) {
-                    dict.Add(i, items[i]);
+                    dictTemp.Add(i, items[i]);
                 }
             }
+
+            dictTemp.OrderBy(pair => pair.Value.nameOrId).CopyTo(dict);
 
             return dict;
         }

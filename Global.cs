@@ -26,7 +26,7 @@ namespace Save_Editor {
             return new Guid(StringToByteArray(hexString.Replace(" ", "").Replace("-", ""))).ToString();
         }
 
-        public static void CopyTo<K, V>(this Dictionary<K, V> source, Dictionary<K, V> dest) {
+        public static void CopyTo<K, V>(this IEnumerable<KeyValuePair<K, V>> source, Dictionary<K, V> dest) {
             source.ToList().ForEach(x => dest.Add(x.Key, x.Value));
         }
     }
