@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace Save_Editor.Models {
+    [SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Need to match json.")]
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
+    [SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Global")]
     public class SaveFile {
         public Guid   id        { get; set; }
         public bool   erased    { get; set; }

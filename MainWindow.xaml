@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Save_Editor"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:models="clr-namespace:Save_Editor.Models"
         Name="this"
         Title="Hellpoint Save Editor"
         Width="1300"
@@ -37,7 +36,7 @@
                         <ComboBox Margin="8,0"
                                   VerticalAlignment="Center"
                                   DisplayMemberPath="Value"
-                                  ItemsSource="{x:Static models:Item.BREACHES}"
+                                  ItemsSource="{x:Static local:Data.BREACHES}"
                                   SelectedValue="{Binding saveFile.world.breach}"
                                   SelectedValuePath="Key"/>
                     </StackPanel>
@@ -177,7 +176,7 @@
                         <ComboBox Margin="8,0"
                                   VerticalAlignment="Center"
                                   DisplayMemberPath="Value"
-                                  ItemsSource="{x:Static models:Item.COVENANTS}"
+                                  ItemsSource="{x:Static local:Data.COVENANTS}"
                                   SelectedValue="{Binding saveFile.player.covenant}"
                                   SelectedValuePath="Key"/>
                     </StackPanel>
@@ -293,7 +292,7 @@
                                   Margin="8,0"
                                   VerticalAlignment="Center"
                                   DisplayMemberPath="Value"
-                                  ItemsSource="{x:Static models:Item.ALL_ITEMS_SORTED}"
+                                  ItemsSource="{x:Static local:Data.ALL_ITEMS_SORTED}"
                                   SelectedValuePath="Key"/>
                         <Button Margin="8,0"
                                 VerticalAlignment="Center"

@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace Save_Editor.Models {
+    [SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Need to match json.")]
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
+    [SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Global")]
+    [SuppressMessage("ReSharper", "CollectionNeverUpdated.Global")]
     public class Player {
         public int                        healingLevel { get; set; }
         public int                        currency     { get; set; }

@@ -66,6 +66,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Data.cs" />
     <Compile Include="Models\BreachState.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Models\Item.cs" />

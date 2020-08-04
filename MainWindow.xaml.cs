@@ -22,12 +22,12 @@ namespace Save_Editor {
         public MainWindow() {
             LoadFile();
 
-            if (!Item.BREACHES.ContainsKey(saveFile.world.breach)) {
-                Item.BREACHES.Add(saveFile.world.breach, $"Unknown ({saveFile.world.breach})");
+            if (!Data.BREACHES.ContainsKey(saveFile.world.breach)) {
+                Data.BREACHES.Add(saveFile.world.breach, $"Unknown ({saveFile.world.breach})");
             }
 
-            if (!Item.COVENANTS.ContainsKey(saveFile.player.covenant)) {
-                Item.COVENANTS.Add(saveFile.player.covenant, $"Unknown ({saveFile.player.covenant})");
+            if (!Data.COVENANTS.ContainsKey(saveFile.player.covenant)) {
+                Data.COVENANTS.Add(saveFile.player.covenant, $"Unknown ({saveFile.player.covenant})");
             }
 
             InitializeComponent();
@@ -65,7 +65,7 @@ namespace Save_Editor {
                 toWrite += JsonConvert.SerializeObject(saveFile.world.sStates, Formatting.Indented) + "\r\n";
 
                 foreach (var item in saveFile.player.items) {
-                    if (Item.ALL_IDS.ContainsKey(item.id)) continue;
+                    if (Data.ALL_IDS.ContainsKey(item.id)) continue;
                     toWrite += ("{\r\n" +
                                 $"    \"id\": \"{item.id}\",\r\n" +
                                 $"    \"count\": {item.count},\r\n" +
