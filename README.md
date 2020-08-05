@@ -16,3 +16,6 @@ That's basically it for the interface.
 There's a few known bugs. 'Temporary' solutions that have become good enough for my purposes to not be worhth the time to fix the right way.
 - You may need to leave the cell/box you're editing for the change to be committed for saving.
 - Trying to remove an item in use in a socket causes a crash. This is deliberte to avoid breaking the save.
+
+
+**[Microsoft. NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472) is required to run the editor.** 
