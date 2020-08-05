@@ -52,6 +52,7 @@ namespace Save_Editor {
             {new Guid("6050600a-e599-4ec9-8c00-d693c1ce5ab4"), "Fragment of Nemundis, the Undisturbed"},
             {new Guid("ddf2b203-0e04-4e9c-b3db-423a8c77698c"), "Fragment of Uthos, the Ashen Born"},
             {new Guid("b18fde07-a54d-43d9-bf4c-25c4532a91ba"), "Fragment of Ozyormy Goija"},
+            {new Guid("bd1f2d9c-6551-446f-a317-c05d1bf36760"), "Fragment of a Daemon"},
             // Axions
             {new Guid("17eccb8f-3f41-4372-8609-ebf5b8fd9687"), "Axions (11)"},
             {new Guid("052dd015-8324-4fd7-a561-36fc5db76ee1"), "Axions (22)"},
@@ -186,7 +187,8 @@ namespace Save_Editor {
             {new Guid("2ea0fb7d-f71f-4e58-9084-3917a0f4be39"), "Archon Spear"},
             {new Guid("5a6ad367-fb00-448a-a8a1-79043de5ba2a"), "Prying Tool"},
             {new Guid("ee34e8d4-6fc2-4cbc-8239-4d7e63a12c18"), "Nemundis Oculus"},
-            {new Guid("522976a5-b3e2-4308-825e-1c998ea914bf"), "Uthos Gavel"}
+            {new Guid("522976a5-b3e2-4308-825e-1c998ea914bf"), "Uthos Gavel"},
+            {new Guid("7a819a2f-c4fa-49f1-80ea-49470235fccb"), "Light Striker"}
         };
 
         public static readonly Dictionary<Guid, string> WEAPONS_RANGED = new Dictionary<Guid, string> {
@@ -201,7 +203,8 @@ namespace Save_Editor {
             {new Guid("66812c79-afa9-48e8-b98c-7b5ab131692d"), "Hedron of Light"},
             {new Guid("a4494bb0-d499-4182-bf77-00b887ab4174"), "Hedron of Entropy"},
             {new Guid("8a12ec6a-7cd7-4da3-b366-d6b7cec3d409"), "Nihl Prophet Hand"},
-            {new Guid("d77c6e26-185a-4510-be18-2f612c6293c2"), "White Prophet Hand"}
+            {new Guid("d77c6e26-185a-4510-be18-2f612c6293c2"), "White Prophet Hand"},
+            {new Guid("47a054e8-f209-41a0-9494-796625ea6b99"), "Etek Aveos"}
         };
 
         public static readonly Dictionary<Guid, string> SHIELDS = new Dictionary<Guid, string> {
@@ -368,10 +371,14 @@ namespace Save_Editor {
             {new Guid("e89c7c93-9271-4eb6-a6bc-12e635a5baea"), "Port Issoudun: Ozy's Pit"},
             {new Guid("ffccc8e3-3014-43c0-b6db-8a803285d1ac"), "Arisen Dominion: Solar Promenade"},
             {new Guid("9a1ee79f-4654-47e8-9f7d-82c8fc2124e5"), "Arisen Dominion: Hall of Remembrance"},
-            {new Guid("b286f14e-58cf-46d1-ac65-16cfe789954e"), "Arisen Dominion: Grand Gallery"}
+            {new Guid("b286f14e-58cf-46d1-ac65-16cfe789954e"), "Arisen Dominion: Grand Gallery"},
+            {new Guid("9fe18611-57ee-4b86-a96c-c3882bd7851f"), "Arisen Dominion: Undisturbed Defas Nemundis"},
+            {new Guid("43a77f53-4d01-4f75-b8d1-c91a75d7d0e9"), "Arisen Dominion: Mine Mausoleum"}
         };
 
-        public static readonly Dictionary<Guid, string> COVENANTS = new Dictionary<Guid, string>();
+        public static readonly Dictionary<Guid, string> COVENANTS = new Dictionary<Guid, string> {
+            {new Guid("6630e491-557e-4753-bbe6-256cc8406e69"), "Nemundis"}
+        };
 
         public static readonly Dictionary<Guid, string> OMNICUBE = new Dictionary<Guid, string> {
             {new Guid("9c22deff-da77-47dd-8635-17333731134b"), "Omnicube"}
