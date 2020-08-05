@@ -114,7 +114,9 @@ namespace Save_Editor {
             {new Guid("d4d5c189-6451-4d9d-b419-552ad82b3ed0"), "Data: Pad on floor beneath Belvedere breach."},
             {new Guid("afee9919-0485-4561-803b-e581c1cf5408"), "Data: Text on floor of Arisen Dominion entrance."},
             {new Guid("97559671-a540-4ac2-b492-acc6eac27bb1"), "Data: Arisen Dominion entrance, knowledge about AI."},
-            {new Guid("08d08b45-d92b-4184-b14f-4c04d4eb23f4"), "Data: Arisen Dominion, secret entrance below Hall of Remembrance."}
+            {new Guid("08d08b45-d92b-4184-b14f-4c04d4eb23f4"), "Data: Arisen Dominion, secret entrance below Hall of Remembrance."},
+            {new Guid("dd50cdfb-b7b4-4a7b-acda-337bf84a25ed"), "Data: From opening the shutters."},
+            {new Guid("499455fb-78b0-4852-8143-6feb20079bbc"), "sState: From opening the shutters."}
             // Unk
             // 0e8f0ce3-598c-4036-af2a-ba8caf4996b0     On entering Alma Mater Atrium from Arcology?
             // b33651e1-e2b1-4c5f-8306-8809f27c0758     On entering Alma Mater via shanty entrance?
@@ -349,6 +351,8 @@ namespace Save_Editor {
             {new Guid("ab722f87-af91-4a67-bf5e-3abf7f5e0722"), "Arcology: Condo Ruins"},
             {new Guid("6e9fecec-7d42-4c32-8323-50c6fb5175fa"), "Arcology: Celestial Workshop"},
             {new Guid("7b354477-add2-45c4-85bc-93afcf82dbde"), "Arcology Underside: Central Mall"},
+            {new Guid("1a00253b-a4cf-4239-a7a8-72b0c85656f4"), "Arcology Underside: SAS"},
+            {new Guid("3b0e6a2d-39c2-4c26-acab-c5cf4bdc86c6"), "Arcology Underside: Outside Platform"},
             {new Guid("a50705f6-1a4a-45d7-9431-6a851b6cbf24"), "Sohn District: Corpse Pit"},
             {new Guid("e621f055-605e-4217-a23d-b670108ae72a"), "Sohn District: Balcony"},
             {new Guid("6d74af07-1235-4029-9bf4-6d2f3ff0dc37"), "Sohn District: Control Center"},
