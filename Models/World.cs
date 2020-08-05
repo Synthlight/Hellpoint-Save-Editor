@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -15,6 +16,9 @@ namespace Save_Editor.Models {
         public int                   hard    { get; set; }
         public bool                  dark    { get; set; }
         public Dictionary<Guid, int> sStates { get; set; }
+
+        [JsonIgnore]
+        public List<SStates> namedSStates => sStates.Select(pair => new SStates(sStates, pair.Key)).ToList();
 
         [JsonExtensionData]
 #pragma warning disable 169

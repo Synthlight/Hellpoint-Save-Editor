@@ -76,6 +76,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\SStates.cs" />
     <Compile Include="Models\World.cs" />
     <Compile Include="Models\Slot.cs" />
     <Compile Include="Models\Player.cs" />

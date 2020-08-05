@@ -5,7 +5,7 @@
         xmlns:local="clr-namespace:Save_Editor"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Name="this"
-        Title="Hellpoint Save Editor"
+        Title="Hellpoint Save Editor (Ctrl+S to Save)"
         Width="1300"
         Height="600"
         DataContext="{x:Reference this}"
@@ -181,7 +181,7 @@
                                Grid.Column="0"
                                Margin="8"
                                VerticalAlignment="Center"
-                               Text="Stat 1:"/>
+                               Text="Stat 'Health':"/>
                     <TextBox Grid.Row="6"
                              Grid.Column="1"
                              Margin="8"
@@ -191,7 +191,7 @@
                                Grid.Column="0"
                                Margin="8"
                                VerticalAlignment="Center"
-                               Text="Stat 2:"/>
+                               Text="Stat 'Stamina':"/>
                     <TextBox Grid.Row="7"
                              Grid.Column="1"
                              Margin="8"
@@ -201,7 +201,7 @@
                                Grid.Column="0"
                                Margin="8"
                                VerticalAlignment="Center"
-                               Text="Stat 3:"/>
+                               Text="Stat 'Energy':"/>
                     <TextBox Grid.Row="8"
                              Grid.Column="1"
                              Margin="8"
@@ -211,7 +211,7 @@
                                Grid.Column="0"
                                Margin="8"
                                VerticalAlignment="Center"
-                               Text="Stat 4:"/>
+                               Text="Stat 'Load':"/>
                     <TextBox Grid.Row="9"
                              Grid.Column="1"
                              Margin="8"
@@ -221,7 +221,7 @@
                                Grid.Column="0"
                                Margin="8"
                                VerticalAlignment="Center"
-                               Text="Stat 5:"/>
+                               Text="Stat 'Strength':"/>
                     <TextBox Grid.Row="10"
                              Grid.Column="1"
                              Margin="8"
@@ -231,7 +231,7 @@
                                Grid.Column="0"
                                Margin="8"
                                VerticalAlignment="Center"
-                               Text="Stat 6:"/>
+                               Text="Stat 'Reflex':"/>
                     <TextBox Grid.Row="11"
                              Grid.Column="1"
                              Margin="8"
@@ -241,7 +241,7 @@
                                Grid.Column="0"
                                Margin="8"
                                VerticalAlignment="Center"
-                               Text="Stat 7:"/>
+                               Text="Stat 'Cognition':"/>
                     <TextBox Grid.Row="12"
                              Grid.Column="1"
                              Margin="8"
@@ -251,7 +251,7 @@
                                Grid.Column="0"
                                Margin="8"
                                VerticalAlignment="Center"
-                               Text="Stat 8:"/>
+                               Text="Stat 'Foresight':"/>
                     <TextBox Grid.Row="13"
                              Grid.Column="1"
                              Margin="8"
@@ -263,7 +263,7 @@
                 <TabItem.Header>
                     <TextBlock Text="Equipment"/>
                 </TabItem.Header>
-                <Grid>
+                <Grid Margin="0,8,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
@@ -498,13 +498,15 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0"
-                                Margin="0,8,0,0"
+                                Grid.Column="0"
+                                Margin="0,8"
                                 Orientation="Horizontal">
                         <TextBlock Margin="8,0"
                                    VerticalAlignment="Center"
@@ -520,8 +522,16 @@
                                 Click="AddItem_OnClick"
                                 Content="Add Item"/>
                     </StackPanel>
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="0,8"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Proficiency, Conductor level, etc, are all the 'count'."/>
+                    </StackPanel>
                     <DataGrid Grid.Row="1"
-                              Margin="0,8,0,0"
+                              Grid.ColumnSpan="2"
                               AutoGenerateColumns="True"
                               AutoGeneratingColumn="DgItems_OnAutoGeneratingColumn"
                               CanUserAddRows="False"
@@ -534,9 +544,26 @@
                 <TabItem.Header>
                     <TextBlock Text="sStates"/>
                 </TabItem.Header>
-                <DataGrid AutoGenerateColumns="True"
-                          ItemsSource="{Binding saveFile.world.sStates}"
-                          SelectionMode="Single"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0"
+                                Margin="0,8"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="For Breaches: 0 == Undiscovered, 1 == Discovered, 2 == Synced"/>
+                    </StackPanel>
+                    <DataGrid Grid.Row="1"
+                              AutoGenerateColumns="True"
+                              ItemsSource="{Binding saveFile.world.namedSStates}"
+                              SelectionMode="Single"/>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
