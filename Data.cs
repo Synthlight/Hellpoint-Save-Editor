@@ -92,6 +92,7 @@ namespace Save_Editor {
             {new Guid("dfe19031-82b5-43aa-9a55-6e0ca1cb0c5a"), "Daring Effigy"},
             {new Guid("9914b3e7-ed47-4043-b544-a4635301af73"), "Fearful Effigy"},
             {new Guid("07f983ba-c6f3-4ecc-8a87-1c283bdcbc4a"), "Healing Proficiency"},
+            {new Guid("04672521-dd4f-4a55-a92f-4c147600febe"), "Eye of the Patriarch"},
             // Conductors
             {new Guid("1e85dd57-6a9a-492e-b584-c11b0cccd657"), "Firearm Conductor"},
             {new Guid("e7dddd25-ddd1-409e-b3a9-0426365d4f19"), "Catalyst Conductor"},
@@ -118,13 +119,17 @@ namespace Save_Editor {
             {new Guid("97559671-a540-4ac2-b492-acc6eac27bb1"), "Data: Arisen Dominion entrance, knowledge about AI."},
             {new Guid("08d08b45-d92b-4184-b14f-4c04d4eb23f4"), "Data: Arisen Dominion, secret entrance below Hall of Remembrance."},
             {new Guid("dd50cdfb-b7b4-4a7b-acda-337bf84a25ed"), "Data: From opening the shutters."},
-            {new Guid("499455fb-78b0-4852-8143-6feb20079bbc"), "sState: From opening the shutters."}
             // Unk
             // 0e8f0ce3-598c-4036-af2a-ba8caf4996b0     On entering Alma Mater Atrium from Arcology?
             // b33651e1-e2b1-4c5f-8306-8809f27c0758     On entering Alma Mater via shanty entrance?
             // 2d86a618-769b-42c8-b6ff-4cba5fa64cb0     Ashen Born and his elevator? (added)
             // aef0ceb6-0bc6-431c-9c59-c2bb7f0ff166     Ashen Born and his elevator? (removed)
             // 559b9cc5-f8b4-40ef-89f0-875ded795bd9     Around activating the Union Park breach?
+            // sStates
+            {new Guid("521e4d7f-037d-459f-8173-19e69b2c7d0d"), "sState: Used Seal of the Anima."},
+            {new Guid("e6e8c73a-3d87-4295-bf0a-7629e704ccd6"), "sState: Used Seal of the Snake."},
+            {new Guid("460b67e6-fbbb-427d-85c6-0fdaa803bdc4"), "sState: Used Seal of Chaos."},
+            {new Guid("aab272b7-b276-495a-856e-cadc95ac7d25"), "sState: Used Seal the Patriarch."}
         };
 
         public static readonly Dictionary<Guid, string> HEALING_METHOD = new Dictionary<Guid, string> {
@@ -150,6 +155,7 @@ namespace Save_Editor {
             {new Guid("f70e6353-e5ad-47cf-abb5-219ac60599a5"), "INB Vault Key (Alma Mater)"},
             {new Guid("34d37879-e1b6-4404-ac05-baed8635e865"), "Port Issoudun Credentials"},
             {new Guid("4b9b3fab-7be3-41cb-a31d-76b1cd467db8"), "Ministry Credentials"},
+            {new Guid("8f61dbe1-7305-499a-9d18-e5639cd7e50e"), "Ministry Key"},
             {new Guid("5aa596b0-2600-4ba9-89c7-3c33eb1f6c45"), "Arisen Dominion Credentials"},
             {new Guid("ba8da887-37ea-49a8-80c8-4a4f3621d38b"), "Alma Mater Institute Credentials"},
             {new Guid("0964446b-ae2c-426d-aa3d-f49873671ff0"), "Architect Credentials"},
@@ -192,7 +198,8 @@ namespace Save_Editor {
             {new Guid("5a6ad367-fb00-448a-a8a1-79043de5ba2a"), "Prying Tool"},
             {new Guid("ee34e8d4-6fc2-4cbc-8239-4d7e63a12c18"), "Nemundis Oculus"},
             {new Guid("522976a5-b3e2-4308-825e-1c998ea914bf"), "Uthos Gavel"},
-            {new Guid("7a819a2f-c4fa-49f1-80ea-49470235fccb"), "Light Striker"}
+            {new Guid("7a819a2f-c4fa-49f1-80ea-49470235fccb"), "Light Striker"},
+            {new Guid("c3226882-2ed8-47ed-90c7-29b9993957f3"), "Tomahawk"}
         };
 
         public static readonly Dictionary<Guid, string> WEAPONS_RANGED = new Dictionary<Guid, string> {
@@ -225,7 +232,8 @@ namespace Save_Editor {
             {new Guid("f442ddc6-a350-4fea-b47e-ae1f1f8759ec"), "Artillery Shield"},
             {new Guid("0ae41428-623a-4b4b-82a1-6018a2727aab"), "Disciple Shield"},
             {new Guid("5b90699e-658f-4ec6-b921-ddbf6deca64a"), "Dark Disciple Shield"},
-            {new Guid("701817c9-c11a-46a1-81da-f5b3787157c7"), "Torture Board"}
+            {new Guid("701817c9-c11a-46a1-81da-f5b3787157c7"), "Torture Board"},
+            {new Guid("9922fc20-9e7b-45c3-ac23-dd313d0454ea"), "Archon Shield"}
         };
 
         public static readonly Dictionary<Guid, string> ARMOR = new Dictionary<Guid, string> {
@@ -293,7 +301,15 @@ namespace Save_Editor {
             {new Guid("6dc1cc58-9295-4aea-b581-ba734e151690"), "Prodigal Spawn Tiara"},
             {new Guid("5334902a-d746-4abe-90a0-97436ce70bdc"), "Disciple Chest"},
             {new Guid("18e07887-c213-470b-b1db-1ce79dacaae7"), "Prodigal Spawn Gloves"},
-            {new Guid("85cceb95-635a-4a0d-ad37-4ef2f233f08a"), "Bloodied Disciple Robe"},
+            {new Guid("85cceb95-635a-4a0d-ad37-4ef2f233f08a"), "Disciple Robe"},
+            {new Guid("64501992-00d9-4d23-89f1-dcd8ad3d0f0e"), "Bloodied Disciple Tiara"},
+            {new Guid("0cd710ee-ba97-493d-aa79-bf64a01eaf41"), "Bloodied Disciple Chest"},
+            {new Guid("c37e8e31-98df-4dab-be52-6310099153d1"), "Bloodied Disciple Gloves"},
+            {new Guid("9f87616e-8365-48d2-9d5f-8e03dbcf9330"), "Bloodied Disciple Robe"},
+            {new Guid("44508439-2116-4fab-b1f0-8d1b3a8d2836"), "Prodigal Spawn Tiara (Dark)"},
+            {new Guid("a464675e-9e52-4f78-8684-3ca6ab6a3aab"), "Prodigal Spawn Chest (Dark)"},
+            {new Guid("63511385-ecde-4d95-b59f-bd1874d1e6b6"), "Prodigal Spawn Gloves (Dark)"},
+            {new Guid("cef80072-4260-45b2-bfe4-eb1e3309d0a1"), "Prodigal Spawn Robe (Dark)"},
             {new Guid("721c2127-c8b9-4320-bdae-9b0033e1bfe6"), "Architect Helm"},
             {new Guid("c7552e5e-d656-43c5-9688-a20dd9ee42c7"), "Architect Exosuit"},
             {new Guid("e827b2ce-5443-4ae1-bb03-2f060fbea117"), "Architect Gauntlets"},
@@ -380,7 +396,8 @@ namespace Save_Editor {
             {new Guid("9a1ee79f-4654-47e8-9f7d-82c8fc2124e5"), "Arisen Dominion: Hall of Remembrance"},
             {new Guid("b286f14e-58cf-46d1-ac65-16cfe789954e"), "Arisen Dominion: Grand Gallery"},
             {new Guid("9fe18611-57ee-4b86-a96c-c3882bd7851f"), "Arisen Dominion: Undisturbed Defas Nemundis"},
-            {new Guid("43a77f53-4d01-4f75-b8d1-c91a75d7d0e9"), "Arisen Dominion: Mine Mausoleum"}
+            {new Guid("43a77f53-4d01-4f75-b8d1-c91a75d7d0e9"), "Arisen Dominion: Mine Mausoleum"},
+            {new Guid("1d290a89-62a4-4a4c-bb1f-c71e13d9a694"), "Arisen Dominion: Tram Station"}
         };
 
         public static readonly Dictionary<Guid, string> COVENANTS = new Dictionary<Guid, string> {
