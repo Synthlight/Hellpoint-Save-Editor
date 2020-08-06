@@ -53,6 +53,8 @@ namespace Save_Editor {
             {new Guid("ddf2b203-0e04-4e9c-b3db-423a8c77698c"), "Fragment of Uthos, the Ashen Born"},
             {new Guid("b18fde07-a54d-43d9-bf4c-25c4532a91ba"), "Fragment of Ozyormy Goija"},
             {new Guid("bd1f2d9c-6551-446f-a317-c05d1bf36760"), "Fragment of a Daemon"},
+            {new Guid("e69465e2-abfe-4287-9b2c-38dd1964ef8d"), "Fragment of a Thespian"},
+            {new Guid("6722f802-1b9b-413d-89dc-ce2725d4cb8b"), "Fragment of an Archon"},
             // Axions
             {new Guid("17eccb8f-3f41-4372-8609-ebf5b8fd9687"), "Axions (11)"},
             {new Guid("052dd015-8324-4fd7-a561-36fc5db76ee1"), "Axions (22)"},
@@ -206,6 +208,7 @@ namespace Save_Editor {
             {new Guid("a4494bb0-d499-4182-bf77-00b887ab4174"), "Hedron of Entropy"},
             {new Guid("8a12ec6a-7cd7-4da3-b366-d6b7cec3d409"), "Nihl Prophet Hand"},
             {new Guid("d77c6e26-185a-4510-be18-2f612c6293c2"), "White Prophet Hand"},
+            {new Guid("b78e2bed-66d2-4fb5-87e1-9edbc19e326c"), "Amber Prophet Hand"},
             {new Guid("47a054e8-f209-41a0-9494-796625ea6b99"), "Etek Aveos"}
         };
 
@@ -381,7 +384,9 @@ namespace Save_Editor {
         };
 
         public static readonly Dictionary<Guid, string> COVENANTS = new Dictionary<Guid, string> {
-            {new Guid("6630e491-557e-4753-bbe6-256cc8406e69"), "Nemundis"}
+            {new Guid("6630e491-557e-4753-bbe6-256cc8406e69"), "Nemundis"},
+            {new Guid("1581accc-4075-43b0-9a8f-e3ea10b1342f"), "Uthos"},
+            {new Guid("1348938d-286a-4d2a-8850-0212225f2b52"), "Ozyormy Goija"}
         };
 
         public static readonly Dictionary<Guid, string> OMNICUBE = new Dictionary<Guid, string> {

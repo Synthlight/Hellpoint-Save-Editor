@@ -54,6 +54,8 @@ namespace Save_Editor {
             try {
                 var toWrite = $"Breach: {Data.GetNameOrId(saveFile.world.breach)},\r\n";
 
+                toWrite += $"Covenant: {Data.GetNameOrId(saveFile.player.covenant)},\r\n";
+
                 var index = -1;
                 foreach (var slot in saveFile.player.slots) {
                     index++;
