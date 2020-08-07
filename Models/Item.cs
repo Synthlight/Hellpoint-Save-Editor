@@ -33,7 +33,7 @@ namespace Save_Editor.Models {
         public string nameOverride = "";
 
         [JsonIgnore]
-        public string name => Data.ALL_ITEMS.ContainsKey(id) ? Data.ALL_ITEMS[id] : nameOverride;
+        public string name => Data.ALL_IDS.ContainsKey(id) ? Data.ALL_IDS[id] : nameOverride;
 
         [JsonIgnore]
         public string nameOrId => name == "" ? id.ToString() : name;

@@ -26,8 +26,12 @@ namespace Save_Editor {
             return new Guid(StringToByteArray(hexString.Replace(" ", "").Replace("-", ""))).ToString();
         }
 
-        public static void CopyTo<K, V>(this IEnumerable<KeyValuePair<K, V>> source, Dictionary<K, V> dest) {
-            source.ToList().ForEach(x => dest.Add(x.Key, x.Value));
+        public static void CopyTo<K, V>(this IEnumerable<KeyValuePair<K, V>> source, Dictionary<K, V> dest, bool ignoreDuplicates = false) {
+            source.ToList()
+                  .ForEach(x => {
+                      if (ignoreDuplicates && dest.ContainsKey(x.Key)) return;
+                      dest.Add(x.Key, x.Value);
+                  });
         }
     }
 }

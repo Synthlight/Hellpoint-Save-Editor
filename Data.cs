@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using Newtonsoft.Json;
+using Save_Editor.Assets;
 
 namespace Save_Editor {
     public static class Data {
@@ -110,7 +113,15 @@ namespace Save_Editor {
             // Omnicube Stuff
             {new Guid("dc15356a-af89-4ef7-8ec2-17b95cfa5c02"), "Omnicube Defense System"},
             {new Guid("ba749cc5-8b45-4234-a98e-a8bee3958602"), "Omnicube Jukebox (Program A)"},
+            {new Guid("929bb05e-e679-4806-8e61-fda78b9aef37"), "Omnicube Jukebox (Program B)"},
+            {new Guid("5033c340-a775-43b3-9511-7d2ace7090bc"), "Omnicube Jukebox (Program C)"},
+            {new Guid("d0dfb1a4-2a0e-4847-b907-1a39424ebfd8"), "Omnicube Jukebox (Program D)"},
+            {new Guid("41fc1b25-81a7-4565-87da-4e5101080f17"), "Omnicube Jukebox (Program E)"},
             {new Guid("c45acf5a-d721-4311-9eb3-65418aaa915f"), "Omnicube Auto-Heal"},
+            {new Guid("7201926a-f100-4eec-9c65-478f3360e53c"), "Omnicube Heater"},
+            {new Guid("cb106391-591b-4da1-b4d4-e4810f1685a3"), "Omnicube Light"},
+            {new Guid("29ae1b08-7766-40a4-9d92-6bd5b4f63c4b"), "Omnicube Quantum Light"},
+            {new Guid("1424c368-ccd2-4c88-98f9-40ecc9277c69"), "Omnicube Transposition"},
             // Data
             {new Guid("327434b9-5aa6-4aff-bdab-48f00eafdffb"), "Data: Arcology Elevator"},
             {new Guid("850b702c-4f89-4513-8243-6c05da344abf"), "Data: Uthos"},
@@ -433,6 +444,10 @@ namespace Save_Editor {
             MODULES_BODY.CopyTo(ALL_IDS);
             MODULES_MIND.CopyTo(ALL_IDS);
             OMNICUBE.CopyTo(ALL_IDS);
+
+            var json   = Encoding.UTF8.GetString(Res.Id_Dump);
+            var idDump = JsonConvert.DeserializeObject<Dictionary<Guid, string>>(json);
+            idDump.CopyTo(ALL_IDS, true);
 
             ALL_IDS.CopyTo(ALL_ITEMS);
 
