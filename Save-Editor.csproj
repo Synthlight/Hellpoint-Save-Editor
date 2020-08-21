@@ -74,6 +74,7 @@
     <Compile Include="Data.cs" />
     <Compile Include="Models\BreachState.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="Models\SCharacter.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -81,6 +82,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\SValues.cs" />
     <Compile Include="Models\SStates.cs" />
     <Compile Include="Models\World.cs" />
     <Compile Include="Models\Slot.cs" />

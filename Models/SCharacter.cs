@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -10,20 +9,27 @@ namespace Save_Editor.Models {
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
     [SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Global")]
-    public class World {
-        public Guid                         breach      { get; set; }
-        public int                          level       { get; set; }
-        public int                          hard        { get; set; }
-        public bool                         dark        { get; set; }
-        public Dictionary<Guid, int>        sStates     { get; set; }
-        public Dictionary<string, int>      sValues     { get; set; }
-        public Dictionary<Guid, SCharacter> sCharacters { get; set; }
+    public class SCharacter {
+        public Guid id { get; set; }
 
         [JsonIgnore]
-        public List<SStates> namedSStates => sStates.Select(pair => new SStates(sStates, pair.Key)).ToList();
+        public string name => Data.ALL_IDS.ContainsKey(id) ? Data.ALL_IDS[id] : "";
 
         [JsonIgnore]
-        public List<SValues> namedSValues => sValues.Select(pair => new SValues(sValues, pair.Key)).ToList();
+        public string factionName => Data.COVENANTS.ContainsKey(id) ? Data.COVENANTS[id] : "";
+
+        [JsonIgnore]
+        public string factionNameOrId => factionName == "" ? factionId.ToString() : factionName;
+
+        public Guid  factionId { get; set; }
+        public float x         { get; set; }
+        public float y         { get; set; }
+        public float z         { get; set; }
+        public float rotation  { get; set; }
+        public bool  alive     { get; set; }
+        public long  deathTime { get; set; }
+        public bool  looted    { get; set; }
+        public long  seed      { get; set; }
 
         [JsonExtensionData]
 #pragma warning disable 169

@@ -531,6 +531,7 @@
                                    Text="Proficiency, Conductor level, etc, are all the 'count'."/>
                     </StackPanel>
                     <DataGrid Grid.Row="1"
+                              Grid.Column="0"
                               Grid.ColumnSpan="2"
                               AutoGenerateColumns="True"
                               AutoGeneratingColumn="DgItems_OnAutoGeneratingColumn"
@@ -562,6 +563,94 @@
                     <DataGrid Grid.Row="1"
                               AutoGenerateColumns="True"
                               ItemsSource="{Binding saveFile.world.namedSStates}"
+                              SelectionMode="Single"/>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="NPCs"/>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0"
+                                Margin="0,8"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="&quot;sCharacters&quot;. If you wanna map them, open an issue on GitHub with your results."/>
+                    </StackPanel>
+                    <DataGrid Grid.Row="1"
+                              AutoGenerateColumns="False"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="False"
+                              ItemsSource="{Binding saveFile.world.sCharacters}"
+                              SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Value.id}"
+                                                Header="id"
+                                                IsReadOnly="True"/>
+                            <DataGridTextColumn Binding="{Binding Value.name}"
+                                                Header="Name"
+                                                IsReadOnly="True"/>
+                            <DataGridTextColumn Binding="{Binding Value.factionNameOrId}"
+                                                Header="Faction"
+                                                IsReadOnly="True"/>
+                            <DataGridTextColumn Binding="{Binding Value.x}"
+                                                Header="x"/>
+                            <DataGridTextColumn Binding="{Binding Value.y}"
+                                                Header="y"/>
+                            <DataGridTextColumn Binding="{Binding Value.z}"
+                                                Header="z"/>
+                            <DataGridTextColumn Binding="{Binding Value.rotation}"
+                                                Header="rotation"/>
+                            <DataGridTextColumn Binding="{Binding Value.alive}"
+                                                Header="alive"/>
+                            <DataGridTextColumn Binding="{Binding Value.deathTime}"
+                                                Header="deathTime"/>
+                            <DataGridTextColumn Binding="{Binding Value.looted}"
+                                                Header="looted"/>
+                            <DataGridTextColumn Binding="{Binding Value.seed}"
+                                                Header="seed"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="sValues"/>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="113*"/>
+                        <ColumnDefinition Width="9*"/>
+                        <ColumnDefinition Width="522*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0"
+                                Grid.ColumnSpan="3"
+                                Margin="0,8"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="8,0"
+                                   VerticalAlignment="Center"
+                                   Text="Various flags or something."/>
+                    </StackPanel>
+                    <DataGrid Grid.Row="1"
+                              Grid.Column="0"
+                              Grid.ColumnSpan="3"
+                              Margin="0,0,0,0.4"
+                              AutoGenerateColumns="True"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="False"
+                              ItemsSource="{Binding saveFile.world.namedSValues}"
                               SelectionMode="Single"/>
                 </Grid>
             </TabItem>

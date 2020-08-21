@@ -421,6 +421,12 @@ namespace Save_Editor {
             {new Guid("9c22deff-da77-47dd-8635-17333731134b"), "Omnicube"}
         };
 
+        public static readonly Dictionary<Guid, string> S_CHARACTERS = new Dictionary<Guid, string> {
+            {new Guid("b67e9444-24c6-43e2-a3d9-a7df237ca243"), "Architect"}
+        };
+
+        public static readonly Dictionary<string, string> S_VALUES = new Dictionary<string, string>();
+
         static Data() {
             MISC           = MISC.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
             HEALING_METHOD = HEALING_METHOD.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
@@ -453,6 +459,7 @@ namespace Save_Editor {
 
             BREACHES.CopyTo(ALL_IDS);
             COVENANTS.CopyTo(ALL_IDS);
+            S_CHARACTERS.CopyTo(ALL_IDS);
 
             ALL_ITEMS_SORTED = ALL_ITEMS.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
 
