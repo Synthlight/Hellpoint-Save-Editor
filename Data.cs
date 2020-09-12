@@ -422,7 +422,8 @@ namespace Save_Editor {
         };
 
         public static readonly Dictionary<Guid, string> S_CHARACTERS = new Dictionary<Guid, string> {
-            {new Guid("b67e9444-24c6-43e2-a3d9-a7df237ca243"), "Architect"}
+            {new Guid("b67e9444-24c6-43e2-a3d9-a7df237ca243"), "Architect"},
+            {new Guid("a5e0542b-5b5d-49fe-b9cd-7440d8f53afe"), "Archon Slaver" }
         };
 
         public static readonly Dictionary<string, string> S_VALUES = new Dictionary<string, string>();
