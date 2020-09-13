@@ -589,33 +589,33 @@
                               AutoGenerateColumns="False"
                               CanUserAddRows="False"
                               CanUserDeleteRows="False"
-                              ItemsSource="{Binding saveFile.world.sCharacters, UpdateSourceTrigger=PropertyChanged}"
+                              ItemsSource="{Binding saveFile.world.sCharactersList, UpdateSourceTrigger=PropertyChanged}"
                               SelectionMode="Single">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Value.id, UpdateSourceTrigger=PropertyChanged}"
+                            <DataGridTextColumn Binding="{Binding id, UpdateSourceTrigger=PropertyChanged}"
                                                 Header="id"
                                                 IsReadOnly="True"/>
-                            <DataGridTextColumn Binding="{Binding Value.name}"
+                            <DataGridTextColumn Binding="{Binding name}"
                                                 Header="Name"
                                                 IsReadOnly="True"/>
-                            <DataGridTextColumn Binding="{Binding Value.factionNameOrId}"
+                            <DataGridTextColumn Binding="{Binding factionNameOrId}"
                                                 Header="Faction"
                                                 IsReadOnly="True"/>
-                            <DataGridTextColumn Binding="{Binding Value.x, UpdateSourceTrigger=PropertyChanged}"
+                            <DataGridTextColumn Binding="{Binding x, UpdateSourceTrigger=PropertyChanged}"
                                                 Header="x"/>
-                            <DataGridTextColumn Binding="{Binding Value.y, UpdateSourceTrigger=PropertyChanged}"
+                            <DataGridTextColumn Binding="{Binding y, UpdateSourceTrigger=PropertyChanged}"
                                                 Header="y"/>
-                            <DataGridTextColumn Binding="{Binding Value.z, UpdateSourceTrigger=PropertyChanged}"
+                            <DataGridTextColumn Binding="{Binding z, UpdateSourceTrigger=PropertyChanged}"
                                                 Header="z"/>
-                            <DataGridTextColumn Binding="{Binding Value.rotation, UpdateSourceTrigger=PropertyChanged}"
+                            <DataGridTextColumn Binding="{Binding rotation, UpdateSourceTrigger=PropertyChanged}"
                                                 Header="rotation"/>
-                            <DataGridTextColumn Binding="{Binding Value.alive, UpdateSourceTrigger=PropertyChanged}"
-                                                Header="alive"/>
-                            <DataGridTextColumn Binding="{Binding Value.deathTime, UpdateSourceTrigger=PropertyChanged}"
+                            <DataGridCheckBoxColumn Binding="{Binding alive, UpdateSourceTrigger=PropertyChanged}"
+                                                    Header="alive"/>
+                            <DataGridTextColumn Binding="{Binding deathTime, UpdateSourceTrigger=PropertyChanged}"
                                                 Header="deathTime"/>
-                            <DataGridTextColumn Binding="{Binding Value.looted, UpdateSourceTrigger=PropertyChanged}"
+                            <DataGridTextColumn Binding="{Binding looted, UpdateSourceTrigger=PropertyChanged}"
                                                 Header="looted"/>
-                            <DataGridTextColumn Binding="{Binding Value.seed, UpdateSourceTrigger=PropertyChanged}"
+                            <DataGridTextColumn Binding="{Binding seed, UpdateSourceTrigger=PropertyChanged}"
                                                 Header="seed"/>
                         </DataGrid.Columns>
                     </DataGrid>

@@ -25,6 +25,9 @@ namespace Save_Editor.Models {
         [JsonIgnore]
         public List<SValues> namedSValues => sValues.Select(pair => new SValues(sValues, pair.Key)).ToList();
 
+        [JsonIgnore]
+        public List<SCharacter> sCharactersList => sCharacters.Values.ToList();
+
         [JsonExtensionData]
 #pragma warning disable 169
 #pragma warning disable IDE0044 // Add readonly modifier
