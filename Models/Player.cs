@@ -23,6 +23,8 @@ namespace Save_Editor.Models {
         public ObservableCollection<Item> items        { get; set; }
         public List<Slot>                 slots        { get; set; }
 
+        public int characterLevel => computeLevel(stats);
+
         [JsonIgnore]
         public Slot slotMainHand => slots[(int) Slot.Index.Main_Hand];
 
@@ -87,6 +89,18 @@ namespace Save_Editor.Models {
             dictTemp.OrderBy(pair => pair.Value.nameOrId).CopyTo(dict);
 
             return dict;
+        }
+
+        private int computeLevel(int[] statsArray) {
+            int cLevel = 0, i;
+
+            for (i = 0; i < stats.Length; i++) {
+                cLevel += statsArray[i];
+            }
+
+            cLevel -= 7;
+
+            return cLevel;
         }
 
         [JsonExtensionData]

@@ -270,8 +270,17 @@
                              Margin="8"
                              VerticalAlignment="Center"
                              Text="{Binding saveFile.name, UpdateSourceTrigger=PropertyChanged}"/>
-
-                             
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="3"
+                               Margin="8"
+                               VerticalAlignment="Center"
+                               Text="Level:"/>
+                    <TextBox Grid.Row="1"
+                             Grid.Column="4"
+                             Margin="8"
+                             VerticalAlignment="Center"
+                             IsReadOnly="True"
+                             Text="{Binding saveFile.player.characterLevel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </Grid>
             </TabItem>
             <TabItem>
