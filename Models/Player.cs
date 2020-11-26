@@ -23,6 +23,7 @@ namespace Save_Editor.Models {
         public ObservableCollection<Item> items        { get; set; }
         public List<Slot>                 slots        { get; set; }
 
+        [JsonIgnore]
         public int characterLevel => computeLevel(stats);
 
         [JsonIgnore]
