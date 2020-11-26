@@ -27,6 +27,7 @@ namespace Save_Editor {
             {new Guid("2db0d906-182f-41c6-836a-08ccd2f48d47"), "Diamond Ingot"},
             {new Guid("ade350f7-3690-4fab-9f9f-4a6f515bdfdc"), "Nihl Shards"},
             {new Guid("43e1bf80-bb98-4aba-afe2-17b19cfa8821"), "Nihl Rock"},
+            {new Guid("a70ee5c4-7dc2-4ee3-87ee-5efdd138b4e3"), "Nihl Bonbons?"},
             // Materials
             {new Guid("84b6a93c-0537-45ec-89ef-9406b8e79f69"), "Material: Hard Glass"},
             {new Guid("c999f573-1154-4794-aa05-8cbd8eb5d154"), "Material: Bones"},
@@ -117,6 +118,8 @@ namespace Save_Editor {
             {new Guid("5033c340-a775-43b3-9511-7d2ace7090bc"), "Omnicube Jukebox (Program C)"},
             {new Guid("d0dfb1a4-2a0e-4847-b907-1a39424ebfd8"), "Omnicube Jukebox (Program D)"},
             {new Guid("41fc1b25-81a7-4565-87da-4e5101080f17"), "Omnicube Jukebox (Program E)"},
+            {new Guid("5b7a0cdd-0151-4869-ad06-e911278ac3ce"), "Omnicube Jukebox (Hallow's Eve)"},
+            {new Guid("d8e0f942-aba0-4453-9e9e-43b290c6e9a3"), "Omnicube Jukebox (Debilitating Music)"},
             {new Guid("c45acf5a-d721-4311-9eb3-65418aaa915f"), "Omnicube Auto-Heal"},
             {new Guid("7201926a-f100-4eec-9c65-478f3360e53c"), "Omnicube Heater"},
             {new Guid("cb106391-591b-4da1-b4d4-e4810f1685a3"), "Omnicube Light"},
@@ -210,7 +213,10 @@ namespace Save_Editor {
             {new Guid("ee34e8d4-6fc2-4cbc-8239-4d7e63a12c18"), "Nemundis Oculus"},
             {new Guid("522976a5-b3e2-4308-825e-1c998ea914bf"), "Uthos Gavel"},
             {new Guid("7a819a2f-c4fa-49f1-80ea-49470235fccb"), "Light Striker"},
-            {new Guid("c3226882-2ed8-47ed-90c7-29b9993957f3"), "Tomahawk"}
+            {new Guid("c3226882-2ed8-47ed-90c7-29b9993957f3"), "Tomahawk"},
+            {new Guid("c01629d3-b114-49c1-8ed6-c616e64b7669"), "Bone Bat"},
+            {new Guid("fba5eeb8-666d-498b-90dc-59a2d940e996"), "Scary Scooper"},
+            {new Guid("afba624d-4ba5-441a-9943-a71a8734fc1a"), "Coffin Crusher"}
         };
 
         public static readonly Dictionary<Guid, string> WEAPONS_RANGED = new Dictionary<Guid, string> {
@@ -344,7 +350,27 @@ namespace Save_Editor {
             {new Guid("79a0361d-2124-4b99-ad2c-ad9e473468a8"), "Depraved Mask"},
             {new Guid("0fb11604-df4b-4f14-9a08-ad3a1201e0b6"), "Depraved Torso"},
             {new Guid("22079e5d-f4bd-41e8-9cae-151430e98f14"), "Depraved Gauntlets"},
-            {new Guid("b6d54762-023f-4ca4-aa1c-cc51b5090e32"), "Depraved Legs"}
+            {new Guid("b6d54762-023f-4ca4-aa1c-cc51b5090e32"), "Depraved Legs"},
+            {new Guid("9ef7fcc1-051e-409f-848c-e2bfb2c66c17"), "Devilish Helmet"},
+            {new Guid("a0c92a28-f4fc-425d-afcc-3ec720ad2c51"), "Devilish Torso"},
+            {new Guid("d1d2db6b-c1fe-49b4-829c-4312f29cd82b"), "Devilish Gloves"},
+            {new Guid("6addebb1-9967-4d92-aebe-49b64ece7561"), "Devilish Legs"},
+            {new Guid("5f7af854-1a5d-41df-a282-acfcd8ff1763"), "Toxic Helmet"},
+            {new Guid("24852a0d-452c-4d97-b88b-8961dcce8f2e"), "Toxic Torso"},
+            {new Guid("e3fda2e0-5448-4ded-b9d7-781c28ec5262"), "Toxic Gloves"},
+            {new Guid("861940b3-f490-4e91-9803-32e99a68e06b"), "Toxic Legs"},
+            {new Guid("56417ea8-c15e-4d91-bf62-41c653c62f07"), "Preterhuman Lord Helmet"},
+            {new Guid("0c030c7a-eaa9-4072-a224-66976165ed10"), "Preterhuman Lord Torso"},
+            {new Guid("a5e02c3a-c5c2-4ad3-aca5-ad7868e096c1"), "Preterhuman Lord Gloves"},
+            {new Guid("61536473-7a89-41df-b5c5-6a14f3044566"), "Preterhuman Lord Legs"},
+            {new Guid("afd4096d-0641-45a6-a888-b1e49119fd95"), "Alien Wear"},
+            {new Guid("465b351b-c382-4951-baaa-ab81f3266965"), "Witch Hat"},
+            {new Guid("55c11a1c-5d67-4e67-b2e8-c5672c117f61"), "Expression Mask"},
+            {new Guid("e2e15271-c1fb-407b-a9c0-8c99f87e6799"), "Pumpkin Headdress"},
+            {new Guid("8fedde13-792d-4f3b-906b-7cfb8a658e86"), "Strange Sport Mask"},
+            {new Guid("abf77367-6a7b-4156-b083-214a02e8312f"), "Silly Eyes"},
+            {new Guid("b77fcb3e-4869-48ad-a3d2-2dd4607d0efe"), "Transhuman Mask"},
+            {new Guid("05be3ae6-36d1-4b96-9ede-f8ef2f1fe968"), "Carnival Mask"}
         };
 
         public static readonly Dictionary<Guid, string> MODULES_BODY = new Dictionary<Guid, string> {
@@ -418,7 +444,8 @@ namespace Save_Editor {
         };
 
         public static readonly Dictionary<Guid, string> OMNICUBE = new Dictionary<Guid, string> {
-            {new Guid("9c22deff-da77-47dd-8635-17333731134b"), "Omnicube"}
+            {new Guid("9c22deff-da77-47dd-8635-17333731134b"), "Omnicube"},
+            {new Guid("565f38f5-156a-400c-845e-d4ea4063a0af"), "Spaceship Omnicube"}
         };
 
         public static readonly Dictionary<Guid, string> S_CHARACTERS = new Dictionary<Guid, string> {
