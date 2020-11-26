@@ -429,6 +429,7 @@ namespace Save_Editor {
             {new Guid("8b7ced07-f592-4025-a547-3ce7fd15b814"), "Consumer"},             // Fourth boss
             {new Guid("1408726b-1c21-4972-85da-65c0740704aa"), "Third Archon Knight"},  // Fifth boss
             {new Guid("a647fd37-6076-409d-aacc-3f81f1ca6f74"), "Our Preying Hostess"},  // Sixth boss
+            {new Guid("fd1e323d-f1e1-423d-8a2c-049e6ce4dbc8"), "Arisen Congregators" }, // Seventh boss
         };
 
         public static readonly Dictionary<string, string> S_VALUES = new Dictionary<string, string>();
