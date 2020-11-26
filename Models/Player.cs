@@ -24,6 +24,9 @@ namespace Save_Editor.Models {
         public List<Slot>                 slots        { get; set; }
 
         [JsonIgnore]
+        public int characterLevel => computeLevel(stats);
+
+        [JsonIgnore]
         public Slot slotMainHand => slots[(int) Slot.Index.Main_Hand];
 
         [JsonIgnore]
@@ -87,6 +90,18 @@ namespace Save_Editor.Models {
             dictTemp.OrderBy(pair => pair.Value.nameOrId).CopyTo(dict);
 
             return dict;
+        }
+
+        private int computeLevel(int[] statsArray) {
+            int cLevel = 0, i;
+
+            for (i = 0; i < stats.Length; i++) {
+                cLevel += statsArray[i];
+            }
+
+            cLevel -= 7;
+
+            return cLevel;
         }
 
         [JsonExtensionData]
