@@ -370,7 +370,27 @@ namespace Save_Editor {
             {new Guid("8fedde13-792d-4f3b-906b-7cfb8a658e86"), "Strange Sport Mask"},
             {new Guid("abf77367-6a7b-4156-b083-214a02e8312f"), "Silly Eyes"},
             {new Guid("b77fcb3e-4869-48ad-a3d2-2dd4607d0efe"), "Transhuman Mask"},
-            {new Guid("05be3ae6-36d1-4b96-9ede-f8ef2f1fe968"), "Carnival Mask"}
+            {new Guid("05be3ae6-36d1-4b96-9ede-f8ef2f1fe968"), "Carnival Mask"},
+            {new Guid("a5ced55d-07b5-4a23-afd2-2ca6984d5a5b"), "Argent Warrior Helm"},
+            {new Guid("69d5db8a-c449-418b-b6a7-5f81b2d0ed03"), "Argent Warrior Armor"},
+            {new Guid("929ad7d0-8eca-4a25-8124-b7e7e1bebeaa"), "Argent Warrior Gauntlets"},
+            {new Guid("b5fa30f4-6eb7-4d49-88ff-52e279c955cd"), "Argent Warrior Boots"},
+            {new Guid("25002700-8a36-4546-a804-dea78bd9c9ef"), "Crimson Sentinel Crown"},
+            {new Guid("a696fdf8-4f7f-4487-8677-ca8bb26ceb13"), "Crimson Sentinel Armor"},
+            {new Guid("be9ecfc0-fc1c-4f31-b91b-9483f2f10623"), "Crimson Sentinel Gauntlets"},
+            {new Guid("df4f65a2-1276-4daf-b4bc-3b951299ea5a"), "Crimson Sentinel Leggins"},
+            {new Guid("ab1caa5d-9611-42b8-8d31-a7183cb0677f"), "Nanocarbon Helm"},
+            {new Guid("6ef5a440-1121-431d-959a-356366967349"), "Nanocarbon Exosuit"},
+            {new Guid("cf96cc06-b466-460e-aa0b-524e2c763106"), "Nanocarbon Gauntlets"},
+            {new Guid("fd0f90d7-c6d1-429a-9674-0b0bb5623d59"), "Nanocarbon Leg Support"},
+            {new Guid("b29ddf02-bced-4780-a172-266a61f7f312"), "Pristine EVA Suit Helm"},
+            {new Guid("56731cd4-5e78-4da7-a003-107753961408"), "Pristine EVA Suit Chest"},
+            {new Guid("1095019e-78da-489b-85ae-1d046333014a"), "Pristine EVA Suit Gloves"},
+            {new Guid("12b223a3-ed64-48bd-a506-0f4f6ca46694"), "Pristine EVA Suit Legs"},
+            {new Guid("9110a5ec-d8d0-44d9-99fd-e521531b4ee4"), "Aureate Warrior Helm"},
+            {new Guid("b35ad384-300c-424a-aafd-67783563af69"), "Aureate Warrior Armor"},
+            {new Guid("469f2755-750c-4452-9052-adccf74e8e15"), "Aureate Warrior Gauntlets"},
+            {new Guid("c5e3e264-8545-4b98-a594-77c8e4a608f8"), "Aureate Warrior Boots"}
         };
 
         public static readonly Dictionary<Guid, string> MODULES_BODY = new Dictionary<Guid, string> {
